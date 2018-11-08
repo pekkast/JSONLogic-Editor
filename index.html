@@ -5,7 +5,6 @@
     <title>A Blockly-based visual editor for JSON structures.</title>
 
     <script type="text/javascript" src="blockly_compressed.js"></script>
-
     <!-- context menu in English: -->
     <script type="text/javascript" src="msg/js/en.js"></script>
 
@@ -24,6 +23,7 @@
     <!-- building a blockly diagram from a JSON string: -->
     <script type="text/javascript" src="menuly_2blocks.js"></script>
 
+
     <script>
 
         function updateJSONarea() {
@@ -38,30 +38,70 @@
     <style>
         body {
             background-color: #fff;
-            font-family: sans-serif;
+            font-family: Times New roman;
         }
         h1 {
             font-weight: normal;
             font-size: 140%;
+            padding-left: 500px;
         }
     </style>
 </head>
 <body>
 
-<h1>An editor for <a href=http://www.json.org>JSON</a> structures made out of <a href="https://developers.google.com/blockly/">Blockly</a>-with-menus.</h1>
+<h1>Built complex rules authomatically by <a href=http://jsonlogic.com/>JsonLogic editor</a> utilizing <a href="https://developers.google.com/blockly/">Blockly</a></h1>
 
   <br/>
 
-  <div style="height: 600px">
+  <div style="height: 800px">
     <div id="blocklyDiv" style="float: left; width: 74%; height: 100%"></div>
 
     <xml id="toolbox" style="display: none">
-        <block type="dictionary"></block>
-        <block type="array"></block>
-        <block type="number"></block>
-        <block type="string"></block>
-        <block type="true"></block>
-        <block type="false"></block>
+
+        <category name="Input" colour="210" >
+            <block type="var"></block>
+            <block type="dictionary"></block>
+            <block type="array"></block>
+            <block type="number"></block>
+            <block type="string"></block>
+            <block type= "true_false"></block>
+        </category>
+       
+        <category name="Logic" colour="120">
+            <block type= "if_logic"></block>
+            <block type= "logical"></block>
+            <block type= "not"></block>
+
+        </category>
+        <category name="Boolean" colour="290">
+            <block type= "boolean"></block>
+        </category>
+
+        <category name="Numeric" colour="150">
+            <block type= "comparison"></block>
+            <block type= "minmax"></block>
+            <block type= "between"></block>
+            <block type= "arithmatic"></block>
+        </category>
+
+        <category name="Array" colour="330">
+            <block type= "map_filter"></block>
+            <block type= "merge"></block>
+            <block type= "InMiss"></block>
+
+            
+        </category>
+
+        <category name="String" colour="20">
+            <block type="inString"></block>
+            <block type="catString"></block>
+            <block type="subStr"></block>
+            <block type="log"></block>
+        </caetgory>
+
+        <!---->
+        
+
     </xml>
 
     <div style="margin-left: 74%; width: 24%; height: 100%">
@@ -87,3 +127,4 @@
 
 </body>
 </html>
+
