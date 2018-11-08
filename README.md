@@ -1,7 +1,7 @@
 MenulyJSON
 ==============
+Built complex rules authomatically by JSONLogic editor utilizing Blockly. All supported operations in JSONLogic structure are provided by Blockly blocks. Drag and drop blocks to make your own rule.
 
-An editor for JSON structures made out of Blockly-with-menus.
-We hope this approach is faster to use than dragging blocks from a toolbox.
-
-Navigate to http://ens-lg4.github.io/MenulyJSON/ to see the web page.
+References:
+1- https://developers.google.com/blockly/
+2- https://github.com/ens-lg4/MenulyJSON
