@@ -7,3 +7,5 @@ References:
 1- https://developers.google.com/blockly/
 
 2- https://github.com/ens-lg4/MenulyJSON
+
+3- http://jsonlogic.com/
