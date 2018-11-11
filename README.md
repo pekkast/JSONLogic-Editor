@@ -1,4 +1,4 @@
-MenulyJSON
+JSONLogic Editor
 ==============
 Built complex rules authomatically by JSONLogic editor utilizing Blockly. All supported operations in JSONLogic structure are provided by Blockly blocks. Drag and drop blocks to make your own rule.
 
