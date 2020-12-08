@@ -84,7 +84,7 @@ Blockly.JSON.buildAndConnect = function(json_structure, parentConnection) {
                 targetBlock.setFieldValue(String(Boolean(json_structure)), 'bool');
                 break;
             case 'tag':
-                targetBlock.setFieldValue( String(json_structure.var), 'tag_value' );
+                targetBlock.setFieldValue(String(json_structure.var), 'tag_value');
                 break;
             case 'dictionary':
                 var i=0;
