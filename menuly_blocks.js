@@ -1,6 +1,6 @@
 'use strict';
 
-const selectors = ['var', 'dictionary', 'array', 'number', 'string',
+const selectors = ['tag', 'var', 'dictionary', 'array', 'number', 'string',
                           'true_false', 'if_logic', 'logical', 'not',
                           'boolean', 'comparison', 'minmax', 'between',
                           'arithmetic', 'map_filter', 'merge', 'InMiss',
@@ -176,6 +176,20 @@ Blockly.Blocks['array'] = {
   }
 };
 
+// ------------------------------------------------------------------------------------------------------
+Blockly.Blocks['tag'] = {
+  init: function() {
+    this.setColour(190);
+    this.setOutput(true, ["element"]);
+
+    this.appendDummyInput()
+        .setAlign(Blockly.ALIGN_CENTRE)
+        .appendField(" tag ")
+        .appendField('"')
+        .appendField(new Blockly.FieldTextInput(''), 'tag_value')
+        .appendField('"');
+  }
+};
 //------------------------------------------------------------------------------------------------------- 
 
 Blockly.Blocks['var'] = {
