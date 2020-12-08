@@ -360,7 +360,7 @@ Blockly.Blocks['arithmetic'] = {
         .appendField(new Blockly.FieldTextbutton('+', function() { this.sourceBlock_.appendElementInput(); }) )
         .appendField("  ");
         
-    this.setInputsInline(true);
+    this.setInputsInline(false);
   },
   appendElementInput: function() {
     appendElementInput(this);
