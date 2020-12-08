@@ -36,7 +36,7 @@ Blockly.JSON.buildAndConnect = function(json_structure, parentConnection) {
                 type = "minmax";
             }else if(json_keys[0] == "*" || json_keys[0] == "/" || json_keys[0] == "+" 
                     || json_keys[0] == "-" || json_keys[0] == "%"){
-                type = "arithmatic";
+                type = "arithmetic";
             }else if(json_keys[0] == "map" || json_keys[0] == "reduce" || json_keys[0] == "filter" 
                     || json_keys[0] == "all" || json_keys[0] == "none" || json_keys[0] == "some"){
                 type = "map_filter";
@@ -166,16 +166,7 @@ Blockly.JSON.buildAndConnect = function(json_structure, parentConnection) {
                     Blockly.JSON.buildAndConnect(json_structure[key][i], elementConnection);
                 }
                 break;
-            case 'arithmatic':
-                var key=json_keys[0];
-                for(var i in json_structure[key]) {
-                    targetBlock.appendElementInput();
-                    targetBlock.setFieldValue( key, 'operator');
-                    var elementConnection = targetBlock.getInput('element_'+i).connection;
-                    Blockly.JSON.buildAndConnect(json_structure[key][i], elementConnection);
-                }
-                break;
-            case 'arithmatic':
+            case 'arithmetic':
                 var key=json_keys[0];
                 for(var i in json_structure[key]) {
                     targetBlock.appendElementInput();
