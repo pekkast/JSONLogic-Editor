@@ -24,7 +24,7 @@ Blockly.JSON.buildAndConnect = function(json_structure, parentConnection) {
             if (json_keys[0] == "if"){
                 type = "if_logic";
             }else if(json_keys[0] == "var"){
-                type = "var";
+                type = "tag";
             }else if(json_keys[0] == "!=" || json_keys[0] == "===" || json_keys[0] == "==" 
                     || json_keys[0] == "!=="){
                 type = "logical";
@@ -83,13 +83,8 @@ Blockly.JSON.buildAndConnect = function(json_structure, parentConnection) {
             case 'true_false':
                 targetBlock.setFieldValue(String(Boolean(json_structure)), 'bool');
                 break;
-            case 'var':
-                var i=0;
-                for(var key in json_structure) {
-                    var elementConnection = targetBlock.getInput('json'+i).connection;
-                    Blockly.JSON.buildAndConnect(json_structure[key], elementConnection);
-                    i++;
-                }
+            case 'tag':
+                targetBlock.setFieldValue( String(json_structure.var), 'tag_value' );
                 break;
             case 'dictionary':
                 var i=0;
