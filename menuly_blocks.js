@@ -1,5 +1,10 @@
 'use strict';
 
+const selectors = ['var', 'dictionary', 'array', 'number', 'string',
+                          'true_false', 'if_logic', 'logical', 'not',
+                          'boolean', 'comparison', 'minmax', 'between',
+                          'arithmetic', 'map_filter', 'merge', 'InMiss',
+                          'inString','catString', 'subStr' ];
 
 Blockly.selectionArrow  = function() { return Blockly.RTL ? "←" : "→"; };
 Blockly.keyValueArrow   = function() { return Blockly.RTL ? "⇐" : "⇒"; };
@@ -12,11 +17,7 @@ function appendElementInput(that) {
 
         var appended_input = that.appendValueInput('element_'+lastIndex);
         appended_input.appendField(new Blockly.FieldTextbutton('–', function() { that.deleteElementInput(appended_input); }) )
-          .appendSelector(['var', 'dictionary', 'array', 'number', 'string',
-                          'true_false', 'if_logic', 'logical', 'not',
-                          'boolean', 'comparison', 'minmax', 'between',
-                          'arithmatic', 'map_filter', 'merge', 'InMiss',
-                          'inString','catString', 'subStr' ], Blockly.selectionArrow(), 'null');
+          .appendSelector(selectors, Blockly.selectionArrow(), 'null');
           
         that.moveInputBefore('element_'+lastIndex);
 
@@ -55,11 +56,7 @@ Blockly.Blocks['start'] = {
         .appendField("JsonLogic");
 
     this.appendValueInput('json')
-        .appendSelector(['var', 'dictionary', 'array', 'number', 'string',
-                          'true_false', 'if_logic', 'logical', 'not',
-                          'boolean', 'comparison', 'minmax', 'between',
-                          'arithmatic', 'map_filter', 'merge', 'InMiss',
-                          'inString','catString', 'subStr' ], Blockly.selectionArrow(), 'null');
+        .appendSelector(selectors, Blockly.selectionArrow(), 'null');
 
     this.setDeletable(false);
   }
@@ -126,11 +123,7 @@ Blockly.Blocks['dictionary'] = {
         appended_input.appendField(new Blockly.FieldTextbutton('–', function() { this.sourceBlock_.deleteKeyValuePairInput(appended_input); }) )
             .appendField(new Blockly.FieldTextInput('key_'+lastIndex), 'key_field_'+lastIndex)
             .appendField( Blockly.keyValueArrow() )
-            .appendSelector(['var', 'dictionary', 'array', 'number', 'string',
-                          'true_false', 'if_logic', 'logical', 'not',
-                          'boolean', 'comparison', 'minmax', 'between',
-                          'arithmatic', 'map_filter', 'merge', 'InMiss',
-                          'inString','catString', 'subStr' ], Blockly.selectionArrow(), 'null');
+            .appendSelector(selectors, Blockly.selectionArrow(), 'null');
 
         this.moveInputBefore('element_'+lastIndex);
 
@@ -193,11 +186,7 @@ Blockly.Blocks['var'] = {
 
     this.appendValueInput('json0')
         .appendField(" var ")
-        .appendSelector(['var', 'dictionary', 'array', 'number', 'string',
-                          'true_false', 'if_logic', 'logical', 'not',
-                          'boolean', 'comparison', 'minmax', 'between',
-                          'arithmatic', 'map_filter', 'merge', 'InMiss',
-                          'inString','catString', 'subStr' ], Blockly.selectionArrow(), 'null');
+        .appendSelector(selectors, Blockly.selectionArrow(), 'null');
     this.setInputsInline(false);
   },
 };
@@ -232,18 +221,10 @@ Blockly.Blocks['logical'] = {
 
     this.appendValueInput("json0")
         .appendField(" Logical ")
-        .appendSelector(['var', 'dictionary', 'array', 'number', 'string',
-                          'true_false', 'if_logic', 'logical', 'not',
-                          'boolean', 'comparison', 'minmax', 'between',
-                          'arithmatic', 'map_filter', 'merge', 'InMiss',
-                          'inString','catString', 'subStr' ], Blockly.selectionArrow(), 'null');
+        .appendSelector(selectors, Blockly.selectionArrow(), 'null');
     this.appendValueInput("json1")
         .appendField(new Blockly.FieldDropdown(options), "operator")
-        .appendSelector(['var', 'dictionary', 'array', 'number', 'string',
-                          'true_false', 'if_logic', 'logical', 'not',
-                          'boolean', 'comparison', 'minmax', 'between',
-                          'arithmatic', 'map_filter', 'merge', 'InMiss',
-                          'inString','catString', 'subStr' ], Blockly.selectionArrow(), 'null');
+        .appendSelector(selectors, Blockly.selectionArrow(), 'null');
         
     this.setInputsInline(true);
     this.setOutput(true, ["element"]);
@@ -264,11 +245,7 @@ Blockly.Blocks['not'] = {
     this.appendValueInput('json0')
         .appendField(" NOT ")
         .appendField(new Blockly.FieldDropdown(options),'operator')
-        .appendSelector(['var', 'dictionary', 'array', 'number', 'string',
-                          'true_false', 'if_logic', 'logical', 'not',
-                          'boolean', 'comparison', 'minmax', 'between',
-                          'arithmatic', 'map_filter', 'merge', 'InMiss',
-                          'inString','catString', 'subStr' ], Blockly.selectionArrow(), 'null');
+        .appendSelector(selectors, Blockly.selectionArrow(), 'null');
     this.setInputsInline(false);
   },
 };
@@ -308,18 +285,10 @@ Blockly.Blocks['comparison'] = {
 
     this.appendValueInput('json0')
         .appendField(" comparison ")
-        .appendSelector(['var', 'dictionary', 'array', 'number', 'string',
-                          'true_false', 'if_logic', 'logical', 'not',
-                          'boolean', 'comparison', 'minmax', 'between',
-                          'arithmatic', 'map_filter', 'merge', 'InMiss',
-                          'inString','catString', 'subStr' ], Blockly.selectionArrow(), 'null');
+        .appendSelector(selectors, Blockly.selectionArrow(), 'null');
     this.appendValueInput('json1')
         .appendField(new Blockly.FieldDropdown(options),'operator')
-        .appendSelector(['var', 'dictionary', 'array', 'number', 'string',
-                          'true_false', 'if_logic', 'logical', 'not',
-                          'boolean', 'comparison', 'minmax', 'between',
-                          'arithmatic', 'map_filter', 'merge', 'InMiss',
-                          'inString','catString', 'subStr' ], Blockly.selectionArrow(), 'null');
+        .appendSelector(selectors, Blockly.selectionArrow(), 'null');
         
     this.setInputsInline(true);
   },
@@ -365,23 +334,11 @@ Blockly.Blocks['between'] = {
         .appendField(new Blockly.FieldDropdown(options),'operator')
         .appendField("  ")
     this.appendValueInput('json0')
-        .appendSelector(['var', 'dictionary', 'array', 'number', 'string',
-                          'true_false', 'if_logic', 'logical', 'not',
-                          'boolean', 'comparison', 'minmax', 'between',
-                          'arithmatic', 'map_filter', 'merge', 'InMiss',
-                          'inString','catString', 'subStr' ], Blockly.selectionArrow(), 'null');
+        .appendSelector(selectors, Blockly.selectionArrow(), 'null');
     this.appendValueInput('json1')
-        .appendSelector(['var', 'dictionary', 'array', 'number', 'string',
-                          'true_false', 'if_logic', 'logical', 'not',
-                          'boolean', 'comparison', 'minmax', 'between',
-                          'arithmatic', 'map_filter', 'merge', 'InMiss',
-                          'inString','catString', 'subStr' ], Blockly.selectionArrow(), 'null');
+        .appendSelector(selectors, Blockly.selectionArrow(), 'null');
     this.appendValueInput('json2')
-        .appendSelector(['var', 'dictionary', 'array', 'number', 'string',
-                          'true_false', 'if_logic', 'logical', 'not',
-                          'boolean', 'comparison', 'minmax', 'between',
-                          'arithmatic', 'map_filter', 'merge', 'InMiss',
-                          'inString','catString', 'subStr' ], Blockly.selectionArrow(), 'null');
+        .appendSelector(selectors, Blockly.selectionArrow(), 'null');
 
     this.setInputsInline(true);
   },
@@ -389,15 +346,15 @@ Blockly.Blocks['between'] = {
 
 //-------------------------------------------------------------------------------------------------------
 
-Blockly.Blocks['arithmatic'] = {
+Blockly.Blocks['arithmetic'] = {
   length: 0,
   init: function() {
     this.setColour(330);
     this.setOutput(true, ["element"]);
     var options = [['*', '*'], ['/', '/'], ['+', '+'], ['-','-'], ['%', '%']];
 
-    this.appendDummyInput('Arithmatic')
-        .appendField(" Arithmatic ")
+    this.appendDummyInput('Arithmetic')
+        .appendField(" Arithmetic ")
         .appendField(new Blockly.FieldDropdown(options),'operator')
         .appendField("  ")
         .appendField(new Blockly.FieldTextbutton('+', function() { this.sourceBlock_.appendElementInput(); }) )
@@ -424,11 +381,7 @@ Blockly.Blocks['map_filter'] = {
 
     this.appendDummyInput('json0')
         .appendField(new Blockly.FieldDropdown(options),'operator')
-        .appendSelector(['var', 'dictionary', 'array', 'number', 'string',
-                          'true_false', 'if_logic', 'logical', 'not',
-                          'boolean', 'comparison', 'minmax', 'between',
-                          'arithmatic', 'map_filter', 'merge', 'InMiss',
-                          'inString','catString', 'subStr' ], Blockly.selectionArrow(), 'null')
+        .appendSelector(selectors, Blockly.selectionArrow(), 'null')
         .appendField("  ")
         .appendField(new Blockly.FieldTextbutton('+', function() { this.sourceBlock_.appendElementInput(); }) )
         .appendField("  ");
@@ -472,11 +425,7 @@ Blockly.Blocks['InMiss'] = {
 
     this.appendDummyInput('json0')
         .appendField(new Blockly.FieldDropdown(options),'operator')
-        .appendSelector(['var', 'dictionary', 'array', 'number', 'string',
-                          'true_false', 'if_logic', 'logical', 'not',
-                          'boolean', 'comparison', 'minmax', 'between',
-                          'arithmatic', 'map_filter', 'merge', 'InMiss',
-                          'inString','catString', 'subStr' ], Blockly.selectionArrow(), 'null')
+        .appendSelector(selectors, Blockly.selectionArrow(), 'null')
         .appendField(new Blockly.FieldTextbutton('+', function() { this.sourceBlock_.appendElementInput(); }) )
         .appendField("  ");
     this.setInputsInline(false);
@@ -492,18 +441,10 @@ Blockly.Blocks['InMiss'] = {
 Blockly.Blocks['inString'] = {
   init: function() {
     this.appendValueInput("json0")
-        .appendSelector(['var', 'dictionary', 'array', 'number', 'string',
-                          'true_false', 'if_logic', 'logical', 'not',
-                          'boolean', 'comparison', 'minmax', 'between',
-                          'arithmatic', 'map_filter', 'merge', 'InMiss',
-                          'inString','catString', 'subStr' ], Blockly.selectionArrow(), 'null');
+        .appendSelector(selectors, Blockly.selectionArrow(), 'null');
     this.appendValueInput("json1")
         .appendField("in  ")
-        .appendSelector(['var', 'dictionary', 'array', 'number', 'string',
-                          'true_false', 'if_logic', 'logical', 'not',
-                          'boolean', 'comparison', 'minmax', 'between',
-                          'arithmatic', 'map_filter', 'merge', 'InMiss',
-                          'inString','catString', 'subStr' ], Blockly.selectionArrow(), 'null');
+        .appendSelector(selectors, Blockly.selectionArrow(), 'null');
     this.setInputsInline(true);
     this.setOutput(true, ["element"]);
     this.setColour(210);
@@ -561,11 +502,7 @@ Blockly.Blocks['log'] = {
 
     this.appendValueInput('json0')
         .appendField(" log ")
-        .appendSelector(['var', 'dictionary', 'array', 'number', 'string',
-                          'true_false', 'if_logic', 'logical', 'not',
-                          'boolean', 'comparison', 'minmax', 'between',
-                          'arithmatic', 'map_filter', 'merge', 'InMiss',
-                          'inString','catString', 'subStr' ], Blockly.selectionArrow(), 'null');
+        .appendSelector(selectors, Blockly.selectionArrow(), 'null');
     this.setInputsInline(false);
   },
 };
