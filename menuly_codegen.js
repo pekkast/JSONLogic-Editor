@@ -73,15 +73,8 @@ Blockly.JSON['array'] = function(block) {
     return array;
 };
 //-------------------------------------------------------------------------------------------------
-Blockly.JSON['var'] = function(block) {
-    var var_op = {};
-    var array = [];
-    for(var i = 0; i<1; i++) {
-        var pair_key    = "var";
-        var element_value  = this.generalBlockToObj( block.getInputTargetBlock( 'json'+i));
-        var_op[pair_key] = element_value;
-    }
-    return var_op;
+Blockly.JSON['tag'] = function(block) {
+    return {var: block.getFieldValue('tag_value')};
 };
 //-------------------------------------------------------------------------------------------------
 Blockly.JSON['if_logic'] = function(block) {
