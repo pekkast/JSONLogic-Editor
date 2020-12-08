@@ -177,17 +177,17 @@ Blockly.JSON['between'] = function(block) {
     return between;
 };
 //-------------------------------------------------------------------------------------------------
-Blockly.JSON['arithmatic'] = function(block) {
-    var arithmatic = {};
+Blockly.JSON['arithmetic'] = function(block) {
+    var arithmetic = {};
     var array = [];
     for(var i = 0; i<block.length; i++) {
         var pair_key    = block.getFieldValue( 'operator' )
         var element_value  = this.generalBlockToObj( block.getInputTargetBlock( 'element_'+i));
         array[i] = element_value;
 
-    arithmatic[pair_key] = array;
+        arithmetic[pair_key] = array;
     }
-    return arithmatic;
+    return arithmetic;
 };
 //-------------------------------------------------------------------------------------------------
 Blockly.JSON['merge'] = function(block) {
