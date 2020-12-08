@@ -1,6 +1,6 @@
 'use strict';
 
-const selectors = ['tag', 'var', 'dictionary', 'array', 'number', 'string',
+const selectors = ['tag', 'dictionary', 'array', 'number', 'string',
                           'true_false', 'if_logic', 'logical', 'not',
                           'boolean', 'comparison', 'minmax', 'between',
                           'arithmetic', 'map_filter', 'merge', 'InMiss',
