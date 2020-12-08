@@ -123,6 +123,9 @@
     Blockly.JSON.toWorkspace( 'null', Blockly.getMainWorkspace() ); // dogfooding: load the initial state using our own JSON converter
 
     Blockly.addChangeListener(updateJSONarea);
+    const urlParams = new URLSearchParams(window.location.search);
+    document.getElementById('json_area').value = urlParams.get('c');
+    interpretJSONarea();
   </script>
 
 </body>
